@@ -1,47 +1,80 @@
-import React from "react";
+
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
+
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.actions';
+
 import { Card, Button } from "react-bootstrap";
-import mock from "../MovieDetailPage/milla-meets-moses-plakat.jpg";
 
 
 
-function Moviecard() {
+function Moviecard(props) {
+
+  const [movies, setMovies] = useState([]);
+  
+    const history = useHistory();
+  
+    useEffect(() => {
+      getMovies();
+    }, []);
+  
+    const getMovies = async () => {
+      const response = await axios.get(
+        "https://hermes.telekurier.at/api/v1/cfs/collection/codebase_challenge"
+      );
+      console.log(response.data.items);
+      setMovies(response.data.items);
+    };
+  
+    const movieDetails = (movie) => {
+      props.actions.storeMovieName(movie);
+      history.push(`/movie${movie}`);
+    };
 
   return (
     <div className="container">
-      <div className="grid-container">
-          <Card className="movieCardBox" style={{ width: "10rem" }}>
-            <Card.Img variant="top" src={mock} />
-            <Card.Body>
-              <Card.Title className="movieCardTitle">
-                Milla Meets Moses
-              </Card.Title>
+        {movies.map( (movie) => {
+          return( 
+           
+              <div className="grid-container"> 
+                <Card className="movieCardBox" style={{ width: "10rem" }}>
+                <Card.Img variant="top" src={"https://hermes.telekurier.at" + movie.poster.url}
+                  style={{ width: "100%" }}
+                  alt={"poster"} />
+                <Card.Body>
+                  <Card.Title className="movieCardTitle">
+                  {movie.title}
+                  </Card.Title>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star checked"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
 
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
+                  <Card.Text className="movieCardDescription">
+                  {movie.teaser_text} 
+                  </Card.Text>
+                  {/* <Button variant="primary" onClick={() => movieTeaser(movie.teaser_video.video_url)}>Watch Trailer</Button> */}
+                </Card.Body>
+                <Button variant="primary" onClick={() => movieDetails(movie.url)}>View Details</Button>
 
-              <Card.Text className="movieCardDescription">
-                Ein Herumtreiber und Gelegenheitsdealer gibt einem sehr kranken
-                Teenagermädchen Halt
-              </Card.Text>
-              <Button variant="primary">Watch Trailer</Button>
-            </Card.Body>
-          </Card>
-          
-
-      </div>
+                </Card>
+            </div>
+          )
+        })}
     </div>
-  );
+    
+  )
 }
+
 
 const mapStateToProps = (state) => ({ applicationState: state });
 const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators(actions, dispatch),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Moviecard);
+
 
