@@ -4,16 +4,14 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as actions from "../actions/app.actions";
 import axios from "axios";
-
+import Slideshow from '../components/LandingPage/Slideshow';
+import Moviecard from '../components/MovieDetailPage/Moviecard'
 const MovieOverview = (props) => {
   const [movies, setMovies] = useState([]);
-
-        const history = useHistory();
-
+  const history = useHistory();
   useEffect(() => {
     getMovies();
   }, []);
-
   const getMovies = async () => {
     const response = await axios.get(
       "https://hermes.telekurier.at/api/v1/cfs/collection/codebase_challenge"
@@ -21,21 +19,18 @@ const MovieOverview = (props) => {
     console.log(response.data.items);
     setMovies(response.data.items);
   };
-
   const movieDetails = (movie) => {
     props.actions.storeMovieName(movie);
     history.push(`/movie${movie}`);
   };
-
   return (
     <div>
-      <thead>
+      {/* <thead>
         <tr>
           <td>Poster</td>
           <td>Title</td>
         </tr>
       </thead>
-      
       <tbody>
         {movies.map((movie) => {
           return (
@@ -68,11 +63,12 @@ const MovieOverview = (props) => {
             </tr>
           );
         })}
-      </tbody>
+      </tbody> */}
+      <Slideshow movies={movies} />
+      <Moviecard/>
     </div>
   );
 };
-
 const mapStateToProps = (state) => ({ applicationState: state });
 const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators(actions, dispatch),
