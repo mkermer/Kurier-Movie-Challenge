@@ -7,8 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from './components/Login/Login';
 import Registration from './components/Registration/Registration';
-
+import Footer from './components/Footer/Footer';
 import MovieOverview from './components/movie-overview';
+
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             
               </Switch>
               <MovieOverview />
+              <Footer />
 
       </div>
          </Router>  
