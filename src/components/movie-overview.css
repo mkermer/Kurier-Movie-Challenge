@@ -1,0 +1,23 @@
+.searchInput {
+    
+    position: relative;
+    margin-left: 1rem;
+    display: inline;
+  
+    
+}
+
+.search-inline {
+    display: inline-flex;
+    padding: 10px;
+    margin-left: 300px;
+
+
+    
+}
+
+.min-max-movie{
+    font-weight: bold;
+    padding-left: 50px;
+
+}
