@@ -22,11 +22,10 @@ function App() {
       <div className="App">
         
         <Switch>
-         {/*  <Route exact path="/" component={MovieOverview} /> */}
-        {/*   <Route path="/movie" component={MovieDetail} />
+        <Route path="/movie" component={MovieDetail} />
           <Route path="/Login" component={Login} />
-          <Route path="/Registration" component={Registration} /> */}
-          <Route path="/" component={DetailPage} />
+          <Route path="/Registration" component={Registration} />
+          <Route exact path="/" component={MovieOverview}/>
         </Switch>
  
 
