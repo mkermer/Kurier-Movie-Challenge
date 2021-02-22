@@ -14,7 +14,6 @@ import Navigation from './components/Navigation/Navigation';
 import Moviecard from './components/MovieDetailPage/Moviecard';
 import Slideshow from "./components/LandingPage/Slideshow";
 import Footer from './components/Footer/Footer';
-import DetailPage from './components/MovieDetailPage/DetailPage';
 
 function App() {
   return (
