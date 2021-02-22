@@ -30,23 +30,23 @@ const MovieTrailers = () => {
 
   return (
     <div>
+    
     <h3>Movie Trailers</h3>
     <CardDeck>
       {movies.map(movie => {
         return (
           <Col lg={4} md={6} sm={12}>
         <Card style={{height: '350px', textAlign: 'center'}}>
-          <Card.Img variant="top" src={'https://hermes.telekurier.at' + movie.poster.url} style={{width: '50px'}} alt='poster' />
+          <Card.Img variant="top" src={'https://hermes.telekurier.at' + movie.poster.url} style={{width: '150px'}} alt='poster' />
           <Card.Body>
             <Card.Title>{movie.name}</Card.Title>
             <Card.Text>
               {movie.teaser_text}
       </Card.Text>
           </Card.Body>
-          <Card.Footer>
-            <small className="text-muted">Last updated 3 mins ago</small>
-          </Card.Footer>
+        
         </Card>
+        <br></br>
         </Col>
         )
       })}
