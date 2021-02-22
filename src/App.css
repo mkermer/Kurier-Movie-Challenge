@@ -9,6 +9,7 @@
 
 .movieCardDescription {
     font-size: 0.7rem;
+    height: 100px;
 }
 
 .movieCardTitle {
@@ -44,6 +45,7 @@
 
 .movieCardBox {
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000)!important;
+    overflow: hidden;
 }
 
 .grid-container {
