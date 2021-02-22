@@ -1,5 +1,8 @@
-import React from React;
+import React from 'react';
 import './ShowRating.css'
+// import { connect } from 'react-redux';
+// import { bindActionCreators } from 'redux';
+// import * as actions from '../../actions/app.action';
 
 function ShowRating(){
   
@@ -17,3 +20,9 @@ function ShowRating(){
 };
 
 export default ShowRating;
+
+// const mapStateToProps = (state) => ({ applicationState: state });
+// const mapDispatchToProps = (dispatch) => ({
+//   actions: bindActionCreators(actions, dispatch),
+// });
+// export default connect(mapStateToProps, mapDispatchToProps)(ShowRating);

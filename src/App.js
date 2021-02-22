@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from './components/Login/Login';
 import Registration from './components/Registration/Registration';
+import Slideshow from './components/LandingPage/Slideshow';
 
 import MovieOverview from './components/movie-overview';
 
@@ -25,6 +26,7 @@ function App() {
             
               </Switch>
               <MovieOverview />
+              <Slideshow/>
 
       </div>
          </Router>  
