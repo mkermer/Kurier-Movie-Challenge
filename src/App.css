@@ -9,6 +9,7 @@
 
 .movieCardDescription {
     font-size: 0.7rem;
+    height: 100px;
 }
 
 .movieCardTitle {
@@ -32,7 +33,7 @@
 }
 
 .registrationButton {
-    margin-bottom: 0rem!important;
+    margin-bottom: 4rem!important;
     margin-top: 0rem!important;
     font-size: 1rem !important;
     border: none !important;
@@ -44,6 +45,7 @@
 
 .movieCardBox {
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000)!important;
+    overflow: hidden;
 }
 
 .grid-container {

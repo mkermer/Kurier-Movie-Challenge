@@ -6,8 +6,6 @@ import * as actions from "../actions/app.actions";
 import axios from "axios";
 import Slideshow from '../components/LandingPage/Slideshow';
 import Moviecard from '../components/MovieDetailPage/Moviecard'
-
-
 const MovieOverview = (props) => {
   const [movies, setMovies] = useState([]);
   const history = useHistory();

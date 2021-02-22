@@ -34,15 +34,19 @@ function Moviecard(props) {
       history.push(`/movie${movie}`);
     };
 
+    
+
+
+
   return (
     <div className="container">
         {movies.map( (movie) => {
           return( 
            
               <div className="grid-container"> 
-                <Card className="movieCardBox" style={{ width: "10rem" }}>
+                <Card className="movieCardBox" style={{ width: "10rem" , height: "32rem"}}>
                 <Card.Img variant="top" src={"https://hermes.telekurier.at" + movie.poster.url}
-                  style={{ width: "100%" }}
+                  style={{ width: "100%", height:"230px"}}
                   alt={"poster"} />
                 <Card.Body>
                   <Card.Title className="movieCardTitle">
