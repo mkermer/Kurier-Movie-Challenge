@@ -7,6 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from './components/Login/Login';
 import Registration from './components/Registration/Registration';
+import DetailPage from './components/MovieDetailPage/DetailPage';
+
 
 import MovieOverview from './components/movie-overview';
 
@@ -19,12 +21,14 @@ function App() {
       
               <Switch>
                 {/* <Route path="/" exact component={LandingPage}/> */}
-                <Route path="/Login" component={Login}/>
+               {/*  <Route path="/Login" component={Login}/> */}
                 <Route path="/Registration" component={Registration}/>
+                <Route path="/" component={DetailPage}/>
+               
                 
             
               </Switch>
-              <MovieOverview />
+            {/*   <MovieOverview /> */}
 
       </div>
          </Router>  
