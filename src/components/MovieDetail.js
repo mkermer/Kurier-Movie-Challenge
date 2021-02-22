@@ -3,12 +3,29 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as actions from "../actions/app.actions";
 import axios from "axios";
+import RateIt from './Rating/RateIt';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
+import './Movie.css'
 
 function MovieDetail(props) {
-  const [movie, setMovie] = useState();
+  const [movie, setMovie] = useState({
+    title: "",
+    directors: [],
+    authors: [],
+    cast: [],
+    release_year: "",
+    imdb_rating: 0,
+    genres: [],
+    trailer: {},
+
+  });
+  const [avgRat, setAvgRat] = useState();
 
   useEffect(() => {
+
     getMovie();
+    getAverageRating();
     console.log(movie);
   }, []);
 
@@ -20,8 +37,15 @@ function MovieDetail(props) {
     setMovie(response.data.layout.center[0]);
   };
 
+  const getAverageRating = async () => {
+    const response = await axios.get('http://localhost:8080/rating/averageRating/' + movie.title)
+    const average = response.data
+    console.log(average.average)
+    setAvgRat(average.average)
+  }
   return movie ? (
     <div>
+      <RateIt movie={movie} />
       <h1>{movie.title}</h1>
       <h2>Directors:</h2>
       <p>
@@ -53,6 +77,11 @@ function MovieDetail(props) {
         controls
         height="300px"
       />
+      <FontAwesomeIcon icon={faStar} className={avgRat > 0 ? 'blue' : ''} />
+      <FontAwesomeIcon icon={faStar} className={avgRat > 1 ? 'blue' : ''} />
+      <FontAwesomeIcon icon={faStar} className={avgRat > 2 ? 'blue' : ''} />
+      <FontAwesomeIcon icon={faStar} className={avgRat > 3 ? 'blue' : ''} />
+      <FontAwesomeIcon icon={faStar} className={avgRat > 4 ? 'blue' : ''} />
     </div>
   ) : null;
 }
