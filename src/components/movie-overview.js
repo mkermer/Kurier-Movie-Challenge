@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as actions from "../actions/app.actions";
 import axios from "axios";
+import Slideshow from '../components/LandingPage/Slideshow'
 
 const MovieOverview = (props) => {
   const [movies, setMovies] = useState([]);
