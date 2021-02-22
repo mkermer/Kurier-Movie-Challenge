@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as actions from '../../actions/app.actions';
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import * as actions from "../../actions/app.actions";
 import { Form, Button } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { getApiPath } from "../Authentication/utils";
 
-export default function Login() {
+function Login() {
     const history = useHistory();
     const [loginData, setLoginData] = useState({ username: "", password: "" });
     const [error, setError] = useState("");
@@ -91,6 +91,6 @@ export default function Login() {
 
 const mapStateToProps = (state) => ({ applicationState: state });
 const mapDispatchToProps = (dispatch) => ({
-  actions: bindActionCreators(actions, dispatch),
+    actions: bindActionCreators(actions, dispatch),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

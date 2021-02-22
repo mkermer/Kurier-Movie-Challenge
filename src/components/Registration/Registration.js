@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { getApiPath } from "../Authentication/utils";
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as actions from '../../actions/app.actions';
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import * as actions from "../../actions/app.actions";
 import { Form, Button } from "react-bootstrap";
 
-export default function Registration() {
+function Registration() {
     const [error, setError] = useState("");
     const history = useHistory();
     const [registerData, setRegisterData] = useState({
@@ -103,6 +103,6 @@ export default function Registration() {
 
 const mapStateToProps = (state) => ({ applicationState: state });
 const mapDispatchToProps = (dispatch) => ({
-  actions: bindActionCreators(actions, dispatch),
+    actions: bindActionCreators(actions, dispatch),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Registration);
