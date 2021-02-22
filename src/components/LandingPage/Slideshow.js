@@ -9,18 +9,22 @@ import ShowRating from '../Rating/ShowRating';
 function Slideshow(){
     return(
         <Carousel>
-
-            <Carousel.Item>
-                <img
-                className="d-block w-100"
-                src=""
-                alt="First slide"
-                />
-                <Carousel.Caption>
-                <h3>Movie Title</h3>
-                <ShowRating/>
-                </Carousel.Caption>
-            </Carousel.Item>
+            {/* {movies.map(movie => {
+                return (
+                    <Carousel.Item>
+                        <img
+                        className="d-block w-100"
+                        src={"https://hermes.telekurier.at"
+                                    + movie.poster.url}
+                        alt="First slide"
+                        />
+                        <Carousel.Caption>
+                        <a href="/{movie.title}"> {movie.title} </a> 
+                        <ShowRating/>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                )
+            })} */}
         </Carousel>
     )
 }
