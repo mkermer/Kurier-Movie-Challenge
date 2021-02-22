@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/app.actions';
 import { Form, Button } from "react-bootstrap";
 
-export default function Registration() {
+function Registration() {
     const [error, setError] = useState("");
     const history = useHistory();
     const [registerData, setRegisterData] = useState({
