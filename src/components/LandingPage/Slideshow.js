@@ -1,6 +1,7 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import ShowRating from '../Rating/ShowRating';
+
 // import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux';
 // import * as actions from '../../actions/app.action';
@@ -17,7 +18,7 @@ function Slideshow(){
                 />
                 <Carousel.Caption>
                 <h3>Movie Title</h3>
-                <Rating/>
+                <ShowRating/>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>

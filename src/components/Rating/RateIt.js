@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactStars from "react-rating-stars-component";
 // import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux';
