@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
+import Slideshow from '../components/LandingPage/Slideshow'
 
 
 const MovieOverview = (props) => {
@@ -46,6 +47,7 @@ const MovieOverview = (props) => {
                     </tr>)
                 })}
             </tbody>
+            <Slideshow movies={movies} />
         </div>
     )
 }

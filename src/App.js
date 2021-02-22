@@ -26,7 +26,7 @@ function App() {
             
               </Switch>
               <MovieOverview />
-              <Slideshow/>
+              
 
       </div>
          </Router>  

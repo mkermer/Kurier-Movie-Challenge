@@ -2,14 +2,15 @@ import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import ShowRating from '../Rating/ShowRating';
 
-// import { connect } from 'react-redux';
-// import { bindActionCreators } from 'redux';
-// import * as actions from '../../actions/app.action';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from '../../actions/app.actions';
 
-function Slideshow(){
+function Slideshow(props){
+    const movies = props.movies;
     return(
         <Carousel>
-            {/* {movies.map(movie => {
+            {movies.map(movie => {
                 return (
                     <Carousel.Item>
                         <img
@@ -19,20 +20,20 @@ function Slideshow(){
                         alt="First slide"
                         />
                         <Carousel.Caption>
-                        <a href="/{movie.title}"> {movie.title} </a> 
+                        <a href="/movie/{movie.title}"> {movie.title} </a> 
                         <ShowRating/>
                         </Carousel.Caption>
                     </Carousel.Item>
                 )
-            })} */}
+            })}
         </Carousel>
     )
 }
 
-export default Slideshow;
+// export default Slideshow;
 
-// const mapStateToProps = (state) => ({ applicationState: state });
-// const mapDispatchToProps = (dispatch) => ({
-//   actions: bindActionCreators(actions, dispatch),
-// });
-// export default connect(mapStateToProps, mapDispatchToProps)(Slideshow);
+const mapStateToProps = (state) => ({ applicationState: state });
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators(actions, dispatch),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(Slideshow);
