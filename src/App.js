@@ -8,15 +8,22 @@ import "./App.css";
 // import * as actions from '../../actions/app.action';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Login from "./components/Login/Login";
-import Registration from "./components/Registration/Registration";
+
+import Login from './components/Login/Login';
+import Registration from './components/Registration/Registration';
+import Moviecard from './components/MovieDetailPage/Moviecard';
+
+import MovieOverview from './components/movie-overview';
 import Slideshow from "./components/LandingPage/Slideshow";
 import Footer from './components/Footer/Footer';
+
+
 
 function App() {
   return (
     <Router>
       <div className="App">
+
         <Switch>
           <Route exact path="/" component={MovieOverview} />
           <Route path="/movie" component={MovieDetail} />
@@ -24,6 +31,7 @@ function App() {
           <Route path="/Registration" component={Registration} />
         </Switch>
         <Footer/>
+
       </div>
     </Router>
   );
