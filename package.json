@@ -4,6 +4,11 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.2",
+<<<<<<< HEAD
+=======
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+>>>>>>> 514973658777ed3a7dc2c0b773bdf5d68dd589a6
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@fortawesome/react-fontawesome": "^0.1.14",
