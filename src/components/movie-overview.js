@@ -27,7 +27,7 @@ const MovieOverview = (props) => {
   };
   return (
     <div>
-      <thead>
+      {/* <thead>
         <tr>
           <td>Poster</td>
           <td>Title</td>
@@ -65,7 +65,7 @@ const MovieOverview = (props) => {
             </tr>
           );
         })}
-      </tbody>
+      </tbody> */}
       <Slideshow movies={movies} />
       <Moviecard/>
     </div>
