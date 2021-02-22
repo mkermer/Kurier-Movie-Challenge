@@ -8,12 +8,14 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from './components/Login/Login';
 import Registration from './components/Registration/Registration';
 
+import MovieOverview from './components/movie-overview';
 
 
 function App() {
   return (
     <Router>
       <div className="App">
+
       
               <Switch>
                 {/* <Route path="/" exact component={LandingPage}/> */}
@@ -22,9 +24,11 @@ function App() {
                 
             
               </Switch>
+              <MovieOverview />
 
       </div>
          </Router>  
+   
   );
 }
 
