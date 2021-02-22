@@ -84,7 +84,7 @@ const MovieOverview = (props) => {
           </Col>
           <Col>
           <Form inline>
-      <div className="min-max-movie">Min movies shown</div>
+      <div className="min-max-movie">Max movies shown</div>
         <Form.Control
           className="searchInput"
           type="text"
