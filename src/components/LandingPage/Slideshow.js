@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel } from 'react-bootstrap';
+import { Carousel, Row, Col } from 'react-bootstrap';
 import ShowRating from '../Rating/ShowRating';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -14,19 +14,25 @@ function Slideshow(props){
             {movies.map(movie => {
                 return (
                     <Carousel.Item>
-                        <img
-                        className="d-block w-100"
-                        src={"https://hermes.telekurier.at"
-                                    + movie.poster.url}
-                        alt="First slide"
-                        />
-                        <Carousel.Caption>
-                        
-                        </Carousel.Caption>
-                        <div>
-                            <a href={`/movie${movie.url}`}> {movie.title} </a> 
-                            <ShowRating/>
-                        </div>
+                        <Row>
+                            <Col className="noPad" md={4}>
+                            <a href={`/movie${movie.url}`}>
+                                <img
+                                    className="d-block w-100 poster"
+                                    src={"https://hermes.telekurier.at"
+                                        + movie.poster.url}
+                                    alt="Movie Poster"
+                                />
+                            </a>
+                            </Col>
+                            <Col className="dark" md={8}>
+                                <div>
+                                    <h3><a href={`/movie${movie.url}`} className="Movielink"> {movie.title} </a></h3> 
+                                    <ShowRating/>
+                                    <p>{movie.teaser_text}</p>
+                                </div>
+                            </Col>
+                        </Row>
                     </Carousel.Item>
                 )
             })}
