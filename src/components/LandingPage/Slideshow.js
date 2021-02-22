@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel } from 'react-bootstrap';
+import { Carousel, Row, Col } from 'react-bootstrap';
 import ShowRating from '../Rating/ShowRating';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -14,19 +14,22 @@ function Slideshow(props){
             {movies.map(movie => {
                 return (
                     <Carousel.Item>
-                        <img
-                        className="d-block w-100"
-                        src={"https://hermes.telekurier.at"
-                                    + movie.poster.url}
-                        alt="First slide"
-                        />
-                        <Carousel.Caption>
-                        
-                        </Carousel.Caption>
-                        <div>
+                        <Row>
+                            <Col className="noPad">
+                                <img
+                                    className="d-block w-100"
+                                    src={"https://hermes.telekurier.at"
+                                        + movie.poster.url}
+                                    alt="First slide"
+                                />
+                            </Col>
+                            <Col className="dark">
+                                <div>
                             <a href={`/movie${movie.url}`}> {movie.title} </a> 
                             <ShowRating/>
-                        </div>
+                                </div>
+                            </Col>
+                        </Row>
                     </Carousel.Item>
                 )
             })}
