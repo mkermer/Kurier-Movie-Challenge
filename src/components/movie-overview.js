@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as actions from "../actions/app.actions";
 import axios from "axios";
-import Slideshow from '../components/LandingPage/Slideshow'
 
 const MovieOverview = (props) => {
   const [movies, setMovies] = useState([]);
@@ -36,6 +35,7 @@ const MovieOverview = (props) => {
           <td>Title</td>
         </tr>
       </thead>
+      
       <tbody>
         {movies.map((movie) => {
           return (
@@ -69,7 +69,6 @@ const MovieOverview = (props) => {
           );
         })}
       </tbody>
-      <Slideshow movies={movies} />
     </div>
   );
 };
