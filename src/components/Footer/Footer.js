@@ -5,6 +5,9 @@ import Col from 'react-bootstrap/Col';
 // import { Facebook, Instagram, Twitter, Youtube } from 'react-bootstrap-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Footer.css';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from '../../actions/app.actions';
 
 
 
@@ -52,5 +55,6 @@ function Footer() {
   );
 }
 
-export default Footer;
-// test
+const mapStateToProps = state => ({ applicationState: state });
+const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, dispatch) });
+export default connect(mapStateToProps, mapDispatchToProps)(Footer);

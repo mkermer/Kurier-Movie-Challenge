@@ -1,6 +1,12 @@
+
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from '../../actions/app.actions';
+
 import { Card, Button } from "react-bootstrap";
 
 
@@ -64,5 +70,11 @@ function Moviecard(props) {
   )
 }
 
-export default Moviecard
+
+const mapStateToProps = (state) => ({ applicationState: state });
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators(actions, dispatch),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(Moviecard);
+
 

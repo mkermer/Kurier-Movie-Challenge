@@ -1,0 +1,22 @@
+.Slideshow{
+    width: 30%;
+    text-align: center;
+}
+
+.Slideshow .dark{
+    background-color: black;
+    color: white;
+}
+
+.Slideshow a, .Slideshow a:hover, .Slideshow a:visited{
+    color:white;
+}
+
+.Slideshow a{
+    margin-top: 20px;
+}
+
+
+.Slideshow .noPad{
+    padding-right: 0 !important;
+}
