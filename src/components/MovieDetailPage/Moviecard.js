@@ -1,7 +1,7 @@
 import React from "react";
-// import { connect } from 'react-redux';
-// import { bindActionCreators } from 'redux';
-// import * as actions from '../../actions/app.action';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from '../../actions/app.actions';
 import { Card, Button } from "react-bootstrap";
 import mock from "../MovieDetailPage/milla-meets-moses-plakat.jpg";
 
@@ -39,10 +39,9 @@ function Moviecard() {
   );
 }
 
-// const mapStateToProps = (state) => ({ applicationState: state });
-// const mapDispatchToProps = (dispatch) => ({
-//   actions: bindActionCreators(actions, dispatch),
-// });
-// export default connect(mapStateToProps, mapDispatchToProps)(Login);
+const mapStateToProps = (state) => ({ applicationState: state });
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators(actions, dispatch),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(Moviecard);
 
-export default Moviecard;

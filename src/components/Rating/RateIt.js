@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import ReactStars from "react-rating-stars-component";
-// import { connect } from 'react-redux';
-// import { bindActionCreators } from 'redux';
-// import * as actions from '../../actions/app.action';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from '../../actions/app.actions';
 
 function RateIt(){
     const [rating, setRating] = useState(null);
@@ -18,9 +18,9 @@ function RateIt(){
     );
 };
 
-export default RateIt;
-// const mapStateToProps = (state) => ({ applicationState: state });
-// const mapDispatchToProps = (dispatch) => ({
-//   actions: bindActionCreators(actions, dispatch),
-// });
-// export default connect(mapStateToProps, mapDispatchToProps)(RateIt);
+
+const mapStateToProps = (state) => ({ applicationState: state });
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators(actions, dispatch),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(RateIt);

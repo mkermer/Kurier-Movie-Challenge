@@ -2,9 +2,9 @@ import React from 'react';
 import './ShowRating.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
-// import { connect } from 'react-redux';
-// import { bindActionCreators } from 'redux';
-// import * as actions from '../../actions/app.action';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from '../../actions/app.actions';
 
 function ShowRating(props){
   
@@ -21,10 +21,10 @@ function ShowRating(props){
     );
 };
 
-export default ShowRating;
 
-// const mapStateToProps = (state) => ({ applicationState: state });
-// const mapDispatchToProps = (dispatch) => ({
-//   actions: bindActionCreators(actions, dispatch),
-// });
-// export default connect(mapStateToProps, mapDispatchToProps)(ShowRating);
+
+const mapStateToProps = (state) => ({ applicationState: state });
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators(actions, dispatch),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(ShowRating);
