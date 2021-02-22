@@ -1,7 +1,7 @@
 import React from "react";
-// import { connect } from 'react-redux';
-// import { bindActionCreators } from 'redux';
-// import * as actions from '../../actions/app.action';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from '../../actions/app.actions';
 import { Form, Button } from "react-bootstrap";
 
 function Registration() {
@@ -33,10 +33,10 @@ function Registration() {
   );
 }
 
-// const mapStateToProps = (state) => ({ applicationState: state });
-// const mapDispatchToProps = (dispatch) => ({
-//   actions: bindActionCreators(actions, dispatch),
-// });
-// export default connect(mapStateToProps, mapDispatchToProps)(Registration);
+const mapStateToProps = (state) => ({ applicationState: state });
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators(actions, dispatch),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(Registration);
 
-export default Registration;
+
