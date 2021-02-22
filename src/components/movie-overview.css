@@ -1,23 +1,24 @@
-.searchInput {
+/* .searchInput {
     
     position: relative;
     margin-left: 1rem;
     display: inline;
   
     
-}
+} */
 
 .search-inline {
-    display: inline-flex;
+    /* display: inline-flex;
     padding: 10px;
-    margin-left: 300px;
-
+    margin-left: 300px; */
+    width: 80%;
+    padding-top: 50px;
 
     
 }
-
+/* 
 .min-max-movie{
     font-weight: bold;
     padding-left: 50px;
 
-}
+} */

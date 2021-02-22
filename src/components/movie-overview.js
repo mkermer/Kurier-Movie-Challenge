@@ -5,7 +5,7 @@ import { bindActionCreators } from "redux";
 import * as actions from "../actions/app.actions";
 import axios from "axios";
 import Searchbar from "./Navigation/Searchbar";
-import Form from 'react-bootstrap/Form';
+import {Form, Row, Col } from 'react-bootstrap';
 import "./movie-overview.css"
 import Slideshow from '../components/LandingPage/Slideshow';
 import Moviecard from '../components/MovieDetailPage/Moviecard'
@@ -52,7 +52,9 @@ const MovieOverview = (props) => {
   return (
     <div>
       <div className= "search-inline">
-      <Form inline>
+        <Row>
+          <Col>
+          <Form inline>
         <Form.Control
           className="searchInput"
           type="text"
@@ -63,7 +65,9 @@ const MovieOverview = (props) => {
           }}
       />
       </Form>
-      <Form inline>
+          </Col>
+          <Col>
+          <Form inline>
         <div className="min-max-movie">Min movies shown</div>
         
         <Form.Control
@@ -76,7 +80,9 @@ const MovieOverview = (props) => {
           }}
       />
       </Form>
-      <Form inline>
+          </Col>
+          <Col>
+          <Form inline>
       <div className="min-max-movie">Min movies shown</div>
         <Form.Control
           className="searchInput"
@@ -88,47 +94,15 @@ const MovieOverview = (props) => {
           }}
       />
       </Form>
+          </Col>
+        </Row>
 
+      
+      
+      
+      </div>
  
-      {/* <thead>
-        <tr>
-          <td>Poster</td>
-          <td>Title</td>
-        </tr>
-      </thead>
-      <tbody>
-        {movies.map((movie) => {
-          return (
-            <tr>
-              <td>
-                <img
-                  src={"https://hermes.telekurier.at" + movie.poster.url}
-                  style={{ width: "100px" }}
-                  alt={"poster"}
-                />
-              </td>
-              <td> {movie.title} </td>
-              {movie.genres.map((genre) => {
-                return <span>{genre.name}, </span>;
-              })}
-              <td>
-                {movie.teaser_img ? <img src={movie.teaser_img.url} /> : null}
-              </td>
-              <td>
-                {movie.teaser_video ? (
-                  <video
-                    src={movie.teaser_video.video_url}
-                    controls
-                    style={{ height: "200px" }}
-                  />
-                ) : null}
-              </td>
-              <td> {movie.teaser_text} </td>
-              <button onClick={() => movieDetails(movie.url)}>click</button>
-            </tr>
-          );
-        })}
-      </tbody> */}
+      
       <Slideshow movies={movies} />
       <Moviecard/>
     </div>
