@@ -55,6 +55,7 @@ const MovieOverview = (props) => {
         <Row>
           <Col>
           <Form inline>
+            <div>Search for a movie</div>
         <Form.Control
           className="searchInput"
           type="text"
