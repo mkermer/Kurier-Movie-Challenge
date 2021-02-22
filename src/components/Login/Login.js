@@ -70,6 +70,12 @@ function Login() {
                     <Form.Group controlId="formBasicCheckbox">
                         <Form.Check type="checkbox" label="save password" />
                     </Form.Group>
+                    <div className="registerLink">
+                    <p>
+                        do not have an account yet?
+                        <a href="/Registration"> Register</a>{" "}
+                    </p>
+                </div>
                     <Button
                         variant=""
                         className="registrationButton"
@@ -78,12 +84,7 @@ function Login() {
                         Login
                     </Button>
                 </Form>
-                <div className="registerLink">
-                    <p>
-                        do not have an account yet?
-                        <a href="/Registration"> Register</a>{" "}
-                    </p>
-                </div>
+                
             </div>
         </div>
     );
