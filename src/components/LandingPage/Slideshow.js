@@ -15,18 +15,21 @@ function Slideshow(props){
                 return (
                     <Carousel.Item>
                         <Row>
-                            <Col className="noPad">
+                            <Col className="noPad" md={4}>
+                            <a href={`/movie${movie.url}`}>
                                 <img
-                                    className="d-block w-100"
+                                    className="d-block w-100 poster"
                                     src={"https://hermes.telekurier.at"
                                         + movie.poster.url}
-                                    alt="First slide"
+                                    alt="Movie Poster"
                                 />
+                            </a>
                             </Col>
-                            <Col className="dark">
+                            <Col className="dark" md={8}>
                                 <div>
-                            <a href={`/movie${movie.url}`}> {movie.title} </a> 
-                            <ShowRating/>
+                                    <h3><a href={`/movie${movie.url}`} className="Movielink"> {movie.title} </a></h3> 
+                                    <ShowRating/>
+                                    <p>{movie.teaser_text}</p>
                                 </div>
                             </Col>
                         </Row>

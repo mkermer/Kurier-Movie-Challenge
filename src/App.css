@@ -9,6 +9,7 @@
 
 .movieCardDescription {
     font-size: 0.7rem;
+    height: 100px;
 }
 
 .movieCardTitle {
@@ -25,13 +26,14 @@
 }
 
 .container {
+    display: flex;
+    flex-wrap: wrap;
     align-items: center !important;
     justify-content: center !important;
-    display: flex !important;
 }
 
 .registrationButton {
-    margin-bottom: 0rem!important;
+    margin-bottom: 4rem!important;
     margin-top: 0rem!important;
     font-size: 1rem !important;
     border: none !important;
@@ -43,12 +45,18 @@
 
 .movieCardBox {
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000)!important;
+    overflow: hidden;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
-    padding: 0.1rem;
+    margin-bottom: 0rem!important;
+    margin-top: 0rem!important;
+}
+
+.grid-container>* {
+    margin: 20px;
 }
 
 .registerLink {

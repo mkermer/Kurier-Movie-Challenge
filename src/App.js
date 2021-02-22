@@ -15,20 +15,21 @@ import Slideshow from "./components/LandingPage/Slideshow";
 import Footer from "./components/Footer/Footer";
 
 function App() {
-    return (
-        <Router>
-            <div className="App">
-                <Navigation />
-                <Switch>
-                    <Route exact path="/" component={MovieOverview} />
-                    <Route path="/movie" component={MovieDetail} />
-                    <Route path="/Login" component={Login} />
-                    <Route path="/Registration" component={Registration} />
-                </Switch>
-                <Footer />
+  return (
+    <Router>
+      <div className="App">
+        <Navigation />    
+    <Switch>
+        <Route path="/movie" component={MovieDetail} />
+          <Route path="/Login" component={Login} />
+          <Route path="/Registration" component={Registration} />
+          <Route exact path="/" component={MovieOverview}/>
+          </Switch>
+          <Footer /> 
             </div>
         </Router>
     );
+
 }
 
 const mapStateToProps = (state) => ({ applicationState: state });

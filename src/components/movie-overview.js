@@ -4,10 +4,11 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as actions from "../actions/app.actions";
 import axios from "axios";
-import Slideshow from '../components/LandingPage/Slideshow'
 import Searchbar from "./Navigation/Searchbar";
 import Form from 'react-bootstrap/Form';
 import "./movie-overview.css"
+import Slideshow from '../components/LandingPage/Slideshow';
+import Moviecard from '../components/MovieDetailPage/Moviecard'
 
 const MovieOverview = (props) => {
   const [movies, setMovies] = useState([]);
@@ -17,7 +18,6 @@ const MovieOverview = (props) => {
   const [maxLimit, setMaxLimit] = useState(20);
 
   const history = useHistory();
-
   useEffect(() => {
     if(!searchInput){
       getMovies();
@@ -27,7 +27,7 @@ const MovieOverview = (props) => {
   useEffect(() => {
     searchMyInput()
   }, [searchInput])
-
+  
   const getMovies = async () => {
     const response = await axios.get(
       "https://hermes.telekurier.at/api/v1/cfs/collection/codebase_challenge"
@@ -35,7 +35,6 @@ const MovieOverview = (props) => {
     console.log(response.data.items);
     setMovies(response.data.items);
   };
-
   const movieDetails = (movie) => {
     props.actions.storeMovieName(movie);
     history.push(`/movie${movie}`);
@@ -90,10 +89,8 @@ const MovieOverview = (props) => {
       />
       </Form>
 
-    </div>
-
-
-      <thead>
+ 
+      {/* <thead>
         <tr>
           <td>Poster</td>
           <td>Title</td>
@@ -131,12 +128,12 @@ const MovieOverview = (props) => {
             </tr>
           );
         })}
-      </tbody>
+      </tbody> */}
       <Slideshow movies={movies} />
+      <Moviecard/>
     </div>
   );
 };
-
 const mapStateToProps = (state) => ({ applicationState: state });
 const mapDispatchToProps = (dispatch) => ({
   actions: bindActionCreators(actions, dispatch),

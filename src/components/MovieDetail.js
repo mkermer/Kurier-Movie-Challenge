@@ -3,6 +3,13 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as actions from "../actions/app.actions";
 import axios from "axios";
+import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+
+import MovieTrailers from './MovieDetailPage/MovieTrailers'
+
 
 function MovieDetail(props) {
   const [movie, setMovie] = useState();
@@ -21,38 +28,39 @@ function MovieDetail(props) {
   };
 
   return movie ? (
-    <div>
-      <h1>{movie.title}</h1>
-      <h2>Directors:</h2>
+    <div> 
+      <Container>
+      <Row>
+        <Col sm={8}>
+        <video
+        src={movie.trailer.video ? movie.trailer.video.video_url : null}
+        controls
+        height="300px"
+      />
+        </Col>
+        <Col sm={4}>
+        <h3>{movie.title}</h3>
+      <h3>Directors:</h3>
       <p>
         {movie.directors.map((item) => (
           <p>{item.name}</p>
         ))}
       </p>
-      <h2>Authors:</h2>
-      <p>
-        {movie.authors.map((item) => (
-          <p>{item.name}</p>
-        ))}
-      </p>
       <p>Release year: {movie.release_year}</p>
-      <p>Rating: {movie.imdb_rating}</p>
-      <div>
         <h2>Cast:</h2>
         {movie.cast.map((item) => (
           <p>{item.name}</p>
         ))}
-      </div>
       <h2>Genres:</h2>
       {movie.genres.map((genre) => (
         <p>{genre.name}</p>
       ))}
-      <img src={movie.trailer.img ? movie.trailer.img.url : null} />
-      <video
-        src={movie.trailer.video ? movie.trailer.video.video_url : null}
-        controls
-        height="300px"
-      />
+        </Col>
+      </Row>
+    </Container>
+      <MovieTrailers movie={movie} />
+
+      
     </div>
   ) : null;
 }
