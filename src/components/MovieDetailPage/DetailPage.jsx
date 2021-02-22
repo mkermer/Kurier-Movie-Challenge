@@ -65,7 +65,7 @@ const heroSection = () => {
         </Col>
       </Row>
     </Container>
-    < movieTrailer />
+   
    </div>
     
   );
