@@ -14,19 +14,21 @@ import Navigation from './components/Navigation/Navigation';
 import Moviecard from './components/MovieDetailPage/Moviecard';
 import Slideshow from "./components/LandingPage/Slideshow";
 import Footer from './components/Footer/Footer';
+import DetailPage from './components/MovieDetailPage/DetailPage';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Navigation/>
+        
         <Switch>
-          <Route exact path="/" component={MovieOverview} />
-          <Route path="/movie" component={MovieDetail} />
+         {/*  <Route exact path="/" component={MovieOverview} /> */}
+        {/*   <Route path="/movie" component={MovieDetail} />
           <Route path="/Login" component={Login} />
-          <Route path="/Registration" component={Registration} />
+          <Route path="/Registration" component={Registration} /> */}
+          <Route path="/" component={DetailPage} />
         </Switch>
-        <Footer/>
+ 
 
 
       </div>

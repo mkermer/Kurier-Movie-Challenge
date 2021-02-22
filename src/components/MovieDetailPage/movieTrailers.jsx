@@ -1,89 +1,66 @@
-
 import React from 'react';
-import {
-  MDBRow,
-  MDBCol,
-  MDBCard,
-  MDBCardImage,
-  MDBCardBody,
-  MDBCardTitle,
-  MDBCardText,
-  MDBCardFooter,
-  MDBTooltip,
-  MDBCarousel,
-  MDBCarouselInner,
-  MDBCarouselItem,
-  MDBBtn,
-  MDBCardGroup,
-} from 'mdbreact';
-
-import { MDBIcon, MDBView, MDBMask } from "mdbreact";
 import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Carousel from 'react-bootstrap/Carousel';
+import movieTrailer from './MovieTrailers';
+import Navigation from '../Navigation/Navigation';
+import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
+import CardDeck from 'react-bootstrap/CardDeck';
 
 
-const CardExample = () => {
+const heroSection = () => {
   return (
-    <div className='text-left my-5'>
-      <h2 className='h1-responsive font-weight-bold text-left mx-auto my-0'>Brand's Category</h2>
-      <h5 className='grey-text text-left w-responsive mx-auto mb-0'>
-        Find the best brand to work for!
-      </h5>
-      <Link to="/search"> <Button variant="link">See more</Button></Link>
-
-      <MDBCardGroup>
-        <MDBCard>
-          <MDBCardImage src="https://images.unsplash.com/photo-1568377210220-151e1d7f42c7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="MDBCard image cap" top hover
-            overlay="white-slight" />
-          <MDBCardBody>
-            <MDBCardTitle tag="h5">Prada</MDBCardTitle>
-            <MDBBtn color="primary" size="md">
-              read more
-          </MDBBtn>
-          </MDBCardBody>
-        </MDBCard>
-
-        <MDBCard>
-          <MDBCardImage src="https://images.unsplash.com/photo-1524802020103-aa46eaffcaa2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="MDBCard image cap" top hover
-            overlay="white-slight" />
-          <MDBCardBody>
-            <MDBCardTitle tag="h5">Fanta</MDBCardTitle>
-            {/* <MDBCardText>
-              Some quick example text to build on the card title and make up
-              the bulk of the card's content.
-          </MDBCardText> */}
-            <MDBBtn color="primary" size="md">
-              read more
-          </MDBBtn>
-          </MDBCardBody>
-        </MDBCard>
-
-        <MDBCard>
-          <MDBCardImage src="https://images.unsplash.com/photo-1482484101293-bf4d4a131897?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1660&q=80" alt="MDBCard image cap" top hover
-            overlay="white-slight" />
-          <MDBCardBody>
-            <MDBCardTitle tag="h5">Gucci</MDBCardTitle>
-          
-            <MDBBtn color="primary" size="md">
-              read more
-          </MDBBtn>
-          </MDBCardBody>
-        </MDBCard>
-
-        <MDBCard>
-          <MDBCardImage src="https://images.unsplash.com/photo-1580137009935-79e9440005f2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2807&q=80" alt="MDBCard image cap" top hover
-            overlay="white-slight" />
-          <MDBCardBody>
-            <MDBCardTitle tag="h5">Micheal Kors</MDBCardTitle>
-          
-            <MDBBtn color="primary" size="md">
-              read more
-          </MDBBtn>
-          </MDBCardBody>
-        </MDBCard>
-      </MDBCardGroup>
+    <div>
+      <h3>Movie Trailers</h3>
+      <CardDeck>
+        <Card>
+          <Card.Img variant="top" src="holder.js/100px160" />
+          <Card.Body>
+            <Card.Title>Card title</Card.Title>
+            <Card.Text>
+              This is a wider card with supporting text below as a natural lead-in to
+              additional content. This content is a little bit longer.
+      </Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <small className="text-muted">Last updated 3 mins ago</small>
+          </Card.Footer>
+        </Card>
+        <Card>
+          <Card.Img variant="top" src="holder.js/100px160" />
+          <Card.Body>
+            <Card.Title>Card title</Card.Title>
+            <Card.Text>
+              This card has supporting text below as a natural lead-in to additional
+        content.{' '}
+            </Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <small className="text-muted">Last updated 3 mins ago</small>
+          </Card.Footer>
+        </Card>
+        <Card>
+          <Card.Img variant="top" src="holder.js/100px160" />
+          <Card.Body>
+            <Card.Title>Card title</Card.Title>
+            <Card.Text>
+              This is a wider card with supporting text below as a natural lead-in to
+              additional content. This card has even longer content than the first to
+              show that equal height action.
+      </Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <small className="text-muted">Last updated 3 mins ago</small>
+          </Card.Footer>
+        </Card>
+      </CardDeck>
     </div>
-  );
-}
 
-export default CardExample;
+  );
+};
+
+export default heroSection;

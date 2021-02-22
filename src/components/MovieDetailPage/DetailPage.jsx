@@ -6,14 +6,19 @@ import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Carousel from 'react-bootstrap/Carousel';
-import movieTrailer from './movieTrailers';
+import MovieTrailers from './MovieTrailers';
+import Navigation from '../Navigation/Navigation';
+import Footer from '../Footer/Footer';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from '../../actions/app.actions';
+import PhotoGallery from '../MovieDetailPage/PhotoGallery';
 
 const heroSection = () => {
   return (
     <div>
-
-    
-    <Container>
+       <Navigation /> 
+      <Container>
       <Row>
         <Col sm={8}>
           <Carousel>
@@ -24,7 +29,6 @@ const heroSection = () => {
                 alt="First slide"
                 width="100"
               />
-          
               <Carousel.Caption>
                 <h3>First slide label</h3>
                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -37,7 +41,6 @@ const heroSection = () => {
                 alt="Second slide"
                 width="100"
               />
-
               <Carousel.Caption>
                 <h3>Second slide label</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -50,7 +53,6 @@ const heroSection = () => {
                 alt="Third slide"
                 width="100"
               />s
-
               <Carousel.Caption>
                 <h3>Third slide label</h3>
                 <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
@@ -65,10 +67,20 @@ const heroSection = () => {
         </Col>
       </Row>
     </Container>
-   
+    <br/>
+  
+      <MovieTrailers />
+      <br/>
+      <br/>
+      <PhotoGallery />
+      {/* <Footer/> */}
+  
    </div>
     
   );
 };
-
-export default heroSection;
+const mapStateToProps = (state) => ({ applicationState: state });
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators(actions, dispatch),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(heroSection);
