@@ -7,10 +7,9 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
-import Carousel from 'react-bootstrap/Carousel';
-import Navigation from './Navigation/Navigation';
+
 import MovieTrailers from './MovieDetailPage/MovieTrailers'
-import PhotoGallery from './MovieDetailPage/PhotoGallery'
+
 
 function MovieDetail(props) {
   const [movie, setMovie] = useState();
@@ -29,8 +28,7 @@ function MovieDetail(props) {
   };
 
   return movie ? (
-    <div>
-      <Navigation /> 
+    <div> 
       <Container>
       <Row>
         <Col sm={8}>
@@ -61,7 +59,7 @@ function MovieDetail(props) {
       </Row>
     </Container>
       <MovieTrailers movie={movie} />
-      <PhotoGallery />
+
       
     </div>
   ) : null;
