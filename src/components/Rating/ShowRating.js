@@ -1,7 +1,7 @@
 import React from "react";
 import "./ShowRating.css";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 // import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux';
 // import * as actions from '../../actions/app.action';
