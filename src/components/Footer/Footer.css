@@ -1,0 +1,50 @@
+.background {
+    
+    color:#b60017;
+    height: 10px;
+    text-align: center;
+    padding-right: 120px;
+    margin-right: 0px;
+    margin-top: 10px;
+    border: none;
+    line-height: 25px;
+    padding-top: 30px;
+    
+
+}
+.main-footer {
+    background-color: #b60017;
+    
+    
+}
+
+.background ul li span{
+    
+    margin: 0 40px;
+}
+.background ul li{
+    display: inline;
+    
+}
+.list-unstyled-link{
+    color:white;
+}
+.Footer {
+    margin-bottom: 4rem;
+    text-align: center;
+    color:white
+}
+.FooterLinks {
+    margin: 50 50px;
+    color: white;
+    text-align: center;
+    font-size: 16px;;
+}
+.background ul li a {
+    color: white;
+    font-size: 18px;
+}
+.FooterLinks a {
+    color: white
+}
+/* test */

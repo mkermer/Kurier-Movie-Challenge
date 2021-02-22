@@ -4,43 +4,31 @@ import React from "react";
 // import * as actions from '../../actions/app.action';
 import { Form, Button } from "react-bootstrap";
 
-
 function Login() {
   return (
-    <div>
-      <div className="container">
-        <div className="left">
-          <div className="inner">
-            <h1 className="logo">Login</h1>
-            
-            <Form>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
-              </Form.Group>
+    <div className="container">
+      <div style={{ width: "24rem" }}>
+        <h1 className="logo">Login</h1>
+        <Form>
+          <Form.Group controlId="formBasicEmail">
+            <Form.Control type="text" placeholder="Enter username" />
+          </Form.Group>
 
-              <Form.Group controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
-              </Form.Group>
-              <Form.Group controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="save password" />
-              </Form.Group>
+          <Form.Group controlId="formBasicPassword">
+            <Form.Control type="password" placeholder="Password" />
+          </Form.Group>
+          <Form.Group controlId="formBasicCheckbox">
+            <Form.Check type="checkbox" label="save password" />
+          </Form.Group>
+          <Button variant="" className="registrationButton" type="submit">
+            Login
+          </Button>
+        </Form>
+        <div className="registerLink">
+        <p>
+        do not have an account yet?<a href="/Registration"> Register</a> </p>
+      </div>
 
-              <Button variant="primary" type="submit">
-                Submit
-              </Button>
-            </Form>
-
-            <div className="registerLink">
-              <a href="/Registration">do not have an account yet? Register</a>
-            </div>
-          </div>
-        </div>
-
-        {/* <div className="right">
-        <img src={imge} className="imge" alt="" />
-      </div> */}
       </div>
 
     </div>
