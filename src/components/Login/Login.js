@@ -6,7 +6,7 @@ import { Form, Button } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import { getApiPath } from "../Authentication/utils";
 
-export default function Login() {
+function Login() {
     const history = useHistory();
     const [loginData, setLoginData] = useState({ username: "", password: "" });
     const [error, setError] = useState("");

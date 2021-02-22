@@ -5,15 +5,28 @@ import { bindActionCreators } from "redux";
 import * as actions from "../actions/app.actions";
 import axios from "axios";
 import Slideshow from '../components/LandingPage/Slideshow'
+import Searchbar from "./Navigation/Searchbar";
+import Form from 'react-bootstrap/Form';
+import "./movie-overview.css"
 
 const MovieOverview = (props) => {
   const [movies, setMovies] = useState([]);
 
+  const [searchInput, setSearchInput] = useState("");
+  const [minLimit, setMinLimit] = useState(0);
+  const [maxLimit, setMaxLimit] = useState(20);
+
   const history = useHistory();
 
   useEffect(() => {
-    getMovies();
-  }, []);
+    if(!searchInput){
+      getMovies();
+    }
+  }, [searchInput]);
+
+  useEffect(() => {
+    searchMyInput()
+  }, [searchInput])
 
   const getMovies = async () => {
     const response = await axios.get(
@@ -28,8 +41,58 @@ const MovieOverview = (props) => {
     history.push(`/movie${movie}`);
   };
 
+
+  const searchMyInput = async() =>{
+    const response = await axios.get(
+      `https://efs.film.at/api/v1/cfs/collection/Alle%20Filme?start=${minLimit}&limit=${maxLimit}&term=${searchInput}`
+    );
+    console.log(response.data.items);
+    setMovies(response.data.items)
+  }
+
   return (
     <div>
+      <div className= "search-inline">
+      <Form inline>
+        <Form.Control
+          className="searchInput"
+          type="text"
+          placeholder="Search.." 
+          value={searchInput}
+          onChange={(e ) => {
+            setSearchInput(e.target.value)
+          }}
+      />
+      </Form>
+      <Form inline>
+        <div className="min-max-movie">Min movies shown</div>
+        
+        <Form.Control
+          className="searchInput"
+          type="text"
+          placeholder="Min limit searches" 
+          value={minLimit}
+          onChange={(e ) => {
+            setMinLimit(e.target.value)
+          }}
+      />
+      </Form>
+      <Form inline>
+      <div className="min-max-movie">Min movies shown</div>
+        <Form.Control
+          className="searchInput"
+          type="text"
+          placeholder="Max limit searches" 
+          value={maxLimit}
+          onChange={(e ) => {
+            setMaxLimit(e.target.value)
+          }}
+      />
+      </Form>
+
+    </div>
+
+
       <thead>
         <tr>
           <td>Poster</td>
